@@ -130,3 +130,28 @@ FROM patients
 ORDER BY
   LEN(first_name),
   first_name;
+
+
+//Day 4
+Show the total amount of male patients and the total amount of female patients in the patients table.
+Display the two results in the same row.
+Solutions 
+SELECT 
+  (SELECT COUNT(*) FROM patients WHERE gender='M') AS male_count, 
+  (SELECT COUNT(*) FROM patients WHERE gender='F') AS female_count;
+
+2.Show first and last name, allergies from patients which have allergies to either 'Penicillin' or 'Morphine'. Show results ordered ascending by allergies then by first_name then by last_name.
+SELECT first_name,last_name,allergies
+from patients
+where allergies in ('Penicillin','Morphine')
+order by allergies,first_name,last_name
+
+3.Show patient_id, diagnosis from admissions. Find patients admitted multiple times for the same diagnosis.
+Solution
+SELECT patient_id, diagnosis
+FROM admissions
+GROUP BY
+  patient_id,
+  diagnosis
+HAVING COUNT(*) > 1;
+
