@@ -214,3 +214,10 @@ FROM patients
 GROUP BY province_id
 HAVING sum_height >= 7000
 
+//DAY 7
+Show unique birth years from patients and order them by ascending.
+Solutions 
+SELECT
+  DISTINCT YEAR(birth_date) AS birth_year
+FROM patients
+ORDER BY birth_year;
