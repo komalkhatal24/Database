@@ -248,7 +248,6 @@ SELECT * FROM Worker WHERE WORKER_ID % 2!=0;
 Write an SQL query to clone a new table from another table.
 CREATE TABLE WorkerClone AS SELECT * FROM Worker;
 
-
 Write an SQL query to fetch intersecting records of two tables.
 SELECT * FROM Worker INTERSECT SELECT * FROM WorkerClone;
 
