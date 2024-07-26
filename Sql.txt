@@ -253,3 +253,24 @@ SELECT * FROM Worker INTERSECT SELECT * FROM WorkerClone;
 
 CURRENT DATE times
 SELECT CURRENT_TIMESTAMP;
+
+-2ND HIGHEST SALARY
+select *from employee 
+group by salary 
+order by  salary desc limit 1,1;
+
+SELECT max(Salary) from Worker where Salary not in (Select max(Salary) from Worker);
+
+-Write an SQL query to show one row twice in the results from a table.
+Select FIRST_NAME ,DEPARTMENT FROM Worker where DEPARTMENT ='HR' UNION ALL
+select FIRST_NAME ,DEPARTMENT FROM Worker where DEPARTMENT ='HR'
+
+-Write an SQL query to fetch intersecting records of two tables.
+SELECT * FROM Worker
+INTERSECT
+SELECT * FROM WorkerClone;
+
+SQLite and MySQL compatible syntax
+SELECT w.*
+FROM Worker w
+INNER JOIN WorkerClone wc ON w.WORKER_ID = wc.WORKER_ID;
