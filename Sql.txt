@@ -274,3 +274,13 @@ SQLite and MySQL compatible syntax
 SELECT w.*
 FROM Worker w
 INNER JOIN WorkerClone wc ON w.WORKER_ID = wc.WORKER_ID;
+
+-Write an SQL query to fetch the first 50% of records from a table.
+select * from WORKER where WORKER_ID<=(SELECT COUNT(WORKER_ID)/2 FROM WORKER);
+
+-Write an SQL query to fetch the departments that have less than five people in them.
+SELECT DEPARTMENT, COUNT(WORKER_ID) AS 'Number Of Worker ' from Worker
+GROUP BY DEPARTMENT HAVING COUNT(WORKER_ID)<5;
+
+-Write an SQL query to show all departments along with the number of people in there.
+Write an SQL query to fetch the departments that have less than five people in them.
