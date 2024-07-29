@@ -289,4 +289,3 @@ Write an SQL query to fetch the departments that have less than five people in t
 select product_id from Products
 where low_fats='Y' AND recyclable='Y';
 
--
