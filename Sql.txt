@@ -289,3 +289,12 @@ Write an SQL query to fetch the departments that have less than five people in t
 select product_id from Products
 where low_fats='Y' AND recyclable='Y';
 
+SQL query to fetch all the employees who are not working on any project.
+select * from employeeDetails
+left join EmployeeSalary 
+on employeeDetails.eid=EmployeeSalary .eid
+where project is null;
+
+Write an SQL query to fetch only odd rows from the table.
+select empid from EmployeeDetails
+where emid%2!=0;
