@@ -300,4 +300,4 @@ where emid%2!=0;
 
 update student 
 set name="kk" , age=20
-where student_id=1;
+where student_id=1; 
