@@ -297,3 +297,7 @@ where project is null;
 Write an SQL query to fetch only odd rows from the table.
 select empid from EmployeeDetails
 where emid%2!=0;
+
+update student 
+set name="kk" , age=20
+where student_id=1;
